@@ -1,25 +1,19 @@
 #!/usr/bin/env python3
 
-"""
-
-Main entry point for the primitive database application.
-
-"""
-
-import prompt
+from . import engine
 
 
 def main():
     """
 
-    Main function to run the application.
+    Точка входа, вызывающая основной цикл движка.
 
     """
-    print("DB project is running!")
 
-    # Пример работы с библиотекой prompt согласно заданию [cite: 486]
-    name = prompt.string('May I have your name? ')
-    print(f"Hello, {name}!")
+    try:
+        engine.run()
+    except KeyboardInterrupt:
+        print("\nПрограмма принудительно завершена.")
 
 
 if __name__ == "__main__":
